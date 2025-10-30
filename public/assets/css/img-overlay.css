@@ -1,0 +1,21 @@
+
+.img-container{
+    position: relative;
+}
+img{
+
+    height: 300px;
+    
+}
+
+.img-container::after{
+    content: "";
+    position: absolute;
+    /* background-color:rgba( 0, 0, 0, .7); */
+    height: 100%;
+    width: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
