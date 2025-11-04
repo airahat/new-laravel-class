@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Mail\RegisterConfirmationMail;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Mail;
 use App\Http\Controllers\TraineeController;
 use App\Http\Controllers\RolesController;
 use App\Http\Controllers\UserController;
@@ -14,6 +16,10 @@ use App\Http\Controllers\StatusController;
 Route::get('/', function () {
     return view('welcome');
 });
+// Route::get('/test-mail', function () {
+//     Mail::to('gilipo5652@wivstore.com')->send(new RegisterConfirmationMail());
+//     return view('mails.registration-confirmation');
+// });
 
 Route::get('/dashboard', function () {
     return view('dashboard');
