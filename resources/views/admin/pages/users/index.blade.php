@@ -39,35 +39,38 @@
                     <td>{{ $user['email'] }}</td>
                     <td>{{ $user['role'] }}</td>
                     <td>
+                        {{-- @if ($user['id']===Auth::user()->id) --}}
+                        
                         <x-button href="{{ route('users.show', $user['id']) }}" :anchor="true">
-
+                            
                             View
-
+                            
                         </x-button>
-
-
+                        
+                        
                         <form action="{{ route('users.destroy', $user['id']) }}" method="POST" class="d-inline">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-outline-danger">Remove</button>
-
-
+                            
+                            
                         </form>
                         <a href="{{ route('users.edit', ['user' => $user['id'], 'page' => request('page', 1)]) }}"
                             class="btn btn-outline-info d-inline">
                             Update
                         </a>
-
-
-
-
-
+                        
+                        
+                        
+                        
+                        {{-- @endif --}}
+                        
                     </td>
-
-
-
+                    
+                    
+                    
                 </tr>
-            @endforeach
+                @endforeach
         </tbody>
 
         <tfoot>
